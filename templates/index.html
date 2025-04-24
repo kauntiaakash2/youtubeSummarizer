@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Summarizer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3f7fa;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        input[type="text"], textarea, select {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            color: #555;
+        }
+        input[type="text"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23343a40" viewBox="0 0 4 5"><path d="M2 0L0 2h4L2 0z"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: center;
+            padding-right: 25px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>YouTube Summarizer</h2>
+        <form action="/summarize" target="_blank" method="post">
+            <div class="input-group">
+                <label for="youtube_link">YouTube Link:</label>
+                <input type="text" id="youtube_link" name="youtube_link" placeholder="Paste YouTube link here">
+            </div>
+            <div class="input-group">
+                <label for="model">Summarization Model:</label>
+                <select id="model" name="model">
+                    <option value="gemini-2.0-flash-001">Gemini 2.0 Flash</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="additional_prompt">Additional Instructions (Optional):</label>
+                <textarea id="additional_prompt" name="additional_prompt" placeholder="e.g., Explain it simply, list key points"></textarea>
+            </div>
+            <button type="submit">Summarize</button>
+        </form>
+    </div>
+</body>
+</html>
