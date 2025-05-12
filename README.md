@@ -1,47 +1,66 @@
-# Cloud Run Hello World with Cloud Code
+# Youtube Summarizer
 
-"Hello World" is a [Cloud Run](https://cloud.google.com/run/docs) application that renders a simple webpage.
+Youtube Summarizer is a powerful tool that extracts and summarizes the content of YouTube videos using advanced Natural Language Processing (NLP) techniques. It saves time by generating concise summaries of long videos, allowing you to grasp key points without watching the entire content.
 
-For details on how to use this sample as a template in Cloud Code, read the documentation for Cloud Code for [VS Code](https://cloud.google.com/code/docs/vscode/quickstart-cloud-run?utm_source=ext&utm_medium=partner&utm_campaign=CDR_kri_gcp_cloudcodereadmes_012521&utm_content=-) or [IntelliJ](https://cloud.google.com/code/docs/intellij/quickstart-cloud-run?utm_source=ext&utm_medium=partner&utm_campaign=CDR_kri_gcp_cloudcodereadmes_012521&utm_content=-).
+## Features
 
-### Table of Contents
-* [Getting Started with VS Code](#getting-started-with-vs-code)
-* [Getting Started with IntelliJ](#getting-started-with-intellij)
-* [Sign up for User Research](#sign-up-for-user-research)
+* **Quick Summarization:** Get concise summaries of YouTube videos within seconds.
+* **Transcript Analysis:** Fetches and analyzes video transcripts for better context.
+* **Multi-language Support:** Supports summarization for multiple languages.
+* **Keyword Extraction:** Highlights important keywords from the video content.
+* **User-Friendly Interface:** Simple and intuitive interface for easy navigation.
 
----
-## Getting Started with VS Code
+## Installation
 
-### Run the app locally with the Cloud Run Emulator
-1. Click on the Cloud Code status bar and select 'Run on Cloud Run Emulator'.  
-![image](./img/status-bar.png)
+1. Clone the repository:
 
-2. Use the Cloud Run Emulator dialog to specify your [builder option](https://cloud.google.com/code/docs/vscode/deploying-a-cloud-run-app#deploying_a_cloud_run_service). Cloud Code supports Docker, Jib, and Buildpacks. See the skaffold documentation on [builders](https://skaffold.dev/docs/pipeline-stages/builders/) for more information about build artifact types.  
-![image](./img/build-config.png)
+   ```bash
+   git clone https://github.com/kauntiaakash2/youtubeSummarizer.git
+   ```
+2. Navigate to the project directory:
 
-3. Click ‘Run’. Cloud Code begins building your image.
+   ```bash
+   cd youtubeSummarizer
+   ```
+3. Install the dependencies:
 
-4. View the build progress in the OUTPUT window. Once the build has finished, click on the URL in the OUTPUT window to view your live application.  
-![image](./img/cloud-run-url.png)
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-5. To stop the application, click the stop icon on the Debug Toolbar.
+## Usage
 
----
-## Getting Started with IntelliJ
+To start the application, simply run:
 
-### Run the app locally with the Cloud Run Emulator
+```bash
+python app.py
+```
 
-#### Define run configuration
+Enter the YouTube video URL and click 'Summarize'. The application will fetch the transcript and generate a summary for you.
 
-1. Click the Run/Debug configurations dropdown on the top taskbar and select 'Edit Configurations'.  
-![image](./img/edit-config.png)
+## Configuration
 
-2. Select 'Cloud Run: Run Locally' and specify your [builder option](https://cloud.google.com/code/docs/intellij/developing-a-cloud-run-app#defining_your_run_configuration). Cloud Code supports Docker, Jib, and Buildpacks. See the skaffold documentation on [builders](https://skaffold.dev/docs/pipeline-stages/builders/) for more information about build artifact types.  
-![image](./img/local-build-config.png)
+If you need to configure API keys or change settings, edit the `config.py` file:
 
-#### Run the application
-1. Click the Run/Debug configurations dropdown and select 'Cloud Run: Run Locally'. Click the run icon.  
-![image](./img/config-run-locally.png)
+```python
+API_KEY = 'your_openai_api_key'
+LANGUAGE = 'en'  # Change this to your preferred language
+```
 
-2. View the build process in the output window. Once the build has finished, you will receive a notification from the Event Log. Click 'View' to access the local URLs for your deployed services.  
-![image](./img/local-success.png)
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or suggestions, feel free to open an issue or reach out to the maintainer.
